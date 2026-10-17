@@ -1,0 +1,21 @@
+appId: com.mindgarden.electron-embedding-lab
+productName: Electron Embedding Lab
+asar: true
+directories:
+  output: release
+files:
+  - out/**/*
+  - package.json
+extraResources:
+  - from: .env
+    to: .env
+  - from: .env.example
+    to: .env.example
+win:
+  target:
+    - nsis
+    - zip
+  artifactName: ${productName}-${version}-${arch}.${ext}
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true

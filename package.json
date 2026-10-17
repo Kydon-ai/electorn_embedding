@@ -1,0 +1,33 @@
+{
+  "name": "electron-embedding-lab",
+  "productName": "Electron Embedding Lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Electron host for testing embedded H5 and Vue web applications",
+  "keywords": [],
+  "license": "MIT",
+  "author": {
+    "name": "Kydon",
+    "email": "130697271+Kydon-ai@users.noreply.github.com"
+  },
+  "main": "out/main/index.js",
+  "scripts": {
+    "start": "node scripts/dev.cjs",
+    "dev": "node scripts/dev.cjs",
+    "build": "electron-vite build --ignoreConfigWarning",
+    "typecheck": "tsc --noEmit",
+    "package:dir": "node scripts/validate-current-url.cjs && npm run build && electron-builder --dir --publish never",
+    "package:win": "node scripts/validate-current-url.cjs && npm run build && electron-builder --win nsis zip --publish never"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "electron": "44.9.0",
+    "electron-builder": "^26.0.12",
+    "electron-vite": "^5.0.0",
+    "typescript": "^6.0.3",
+    "vite": "^7.3.7"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
+}
